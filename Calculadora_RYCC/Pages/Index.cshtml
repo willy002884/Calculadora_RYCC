@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Calculadora";
+}
+
+<div style="max-width: 350px; margin: 30px auto; padding: 20px; border: 2px solid black; border-radius: 10px; text-align: center;">
+
+    <h2>Calculadora</h2>
+
+    <form method="post">
+        <p>
+            <label>Valor 1:</label><br />
+            <input type="number" step="any" name="Numero1" value="@Model.Numero1" required />
+        </p>
+        <p>
+            <label>Valor 2:</label><br />
+            <input type="number" step="any" name="Numero2" value="@Model.Numero2" required />
+        </p>
+
+        <button type="submit" name="operacion" value="suma">Sumar</button>
+        <button type="submit" name="operacion" value="resta">Restar</button>
+        <button type="submit" name="operacion" value="multiplicacion">Multiplicar</button>
+        <button type="submit" name="operacion" value="division">Dividir</button>
+
+        <p>
+            <button type="submit" name="operacion" value="limpiar" formnovalidate>Limpiar resultado</button>
+        </p>
+    </form>
+
+    <h3>Resultado: @Model.Resultado</h3>
+</div>
